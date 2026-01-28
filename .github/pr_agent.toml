@@ -1,0 +1,6 @@
+[pr_agent]
+model = "gpt-4o-mini"
+verbosity = "high"
+review_comment_lgtm = false
+inline_code_comments = true
+
