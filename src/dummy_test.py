@@ -11,5 +11,15 @@ def main():
     print("Average is", avg)
 
 
-main()
+def calculate_variance(values):
+    if not values:
+        return 0
 
+    mean = calculate_average(values)
+    total = 0
+    for v in values:
+        total += (v - mean) ** 2
+
+    return total / len(values)
+
+main()
