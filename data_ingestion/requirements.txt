@@ -1,0 +1,15 @@
+pandas
+numpy
+scipy
+scikit-learn
+lightgbm
+statsmodels
+arch
+fastapi
+streamlit
+sqlalchemy
+psycopg2-binary
+openelectricity
+argparse
+requests
+psycopg2

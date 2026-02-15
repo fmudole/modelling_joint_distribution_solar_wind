@@ -1,0 +1,54 @@
+Traceback (most recent call last):
+  File "C:\dev\modelling_joint_distribution_solar_wind\data_ingestion\ingest_openelectricity.py", line 2, in <module>
+    from openelectricity import OEClient
+  File "C:\dev\modelling_joint_distribution_solar_wind\.venv_313\Lib\site-packages\openelectricity\__init__.py", line 7, in <module>
+    from openelectricity.client import AsyncOEClient, OEClient
+  File "C:\dev\modelling_joint_distribution_solar_wind\.venv_313\Lib\site-packages\openelectricity\client.py", line 16, in <module>
+    from openelectricity.logging import get_logger
+  File "C:\dev\modelling_joint_distribution_solar_wind\.venv_313\Lib\site-packages\openelectricity\logging.py", line 12, in <module>
+    from openelectricity.settings_schema import settings
+  File "C:\dev\modelling_joint_distribution_solar_wind\.venv_313\Lib\site-packages\openelectricity\settings_schema.py", line 25, in <module>
+    settings = Settings()
+  File "C:\dev\modelling_joint_distribution_solar_wind\.venv_313\Lib\site-packages\pydantic_settings\main.py", line 188, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        **__pydantic_self__._settings_build_values(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<27 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\dev\modelling_joint_distribution_solar_wind\.venv_313\Lib\site-packages\pydantic\main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Settings
+OPENELECTRICITY_API_KEY
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
+Traceback (most recent call last):
+  File "C:\dev\modelling_joint_distribution_solar_wind\data_ingestion\ingest_openelectricity.py", line 2, in <module>
+    from openelectricity import OEClient
+  File "C:\dev\modelling_joint_distribution_solar_wind\.venv_313\Lib\site-packages\openelectricity\__init__.py", line 7, in <module>
+    from openelectricity.client import AsyncOEClient, OEClient
+  File "C:\dev\modelling_joint_distribution_solar_wind\.venv_313\Lib\site-packages\openelectricity\client.py", line 16, in <module>
+    from openelectricity.logging import get_logger
+  File "C:\dev\modelling_joint_distribution_solar_wind\.venv_313\Lib\site-packages\openelectricity\logging.py", line 12, in <module>
+    from openelectricity.settings_schema import settings
+  File "C:\dev\modelling_joint_distribution_solar_wind\.venv_313\Lib\site-packages\openelectricity\settings_schema.py", line 25, in <module>
+    settings = Settings()
+  File "C:\dev\modelling_joint_distribution_solar_wind\.venv_313\Lib\site-packages\pydantic_settings\main.py", line 188, in __init__
+    super().__init__(
+    ~~~~~~~~~~~~~~~~^
+        **__pydantic_self__._settings_build_values(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<27 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\dev\modelling_joint_distribution_solar_wind\.venv_313\Lib\site-packages\pydantic\main.py", line 253, in __init__
+    validated_self = self.__pydantic_validator__.validate_python(data, self_instance=self)
+pydantic_core._pydantic_core.ValidationError: 1 validation error for Settings
+OPENELECTRICITY_API_KEY
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/missing
