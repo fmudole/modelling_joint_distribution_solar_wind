@@ -3,7 +3,7 @@ from openelectricity import OEClient
 from openelectricity.types import DataMetric
 import pandas as pd
 
-MAX_API_DAY = 7
+# MAX_API_DAY = 365
 
 import logging
 import os
@@ -11,7 +11,7 @@ import psycopg2
 
 from psycopg2.extras import execute_batch
 
-MAX_API_DAY = 7
+MAX_API_DAY = 1
 
 
 class SDKConfig:
@@ -51,16 +51,18 @@ class ForecastingCoreClient:
 
         total_data = []
         current_start = start_date
-        for net_work in network_code:
-            with OEClient(api_key=self.config.api_key) as client:
+
+        with OEClient(api_key=self.config.api_key) as client:
+            for network in network_code:
                 while current_start < end_date:
                     current_end = min(
                         current_start + timedelta(MAX_API_DAY),
                         end_date
                     )
-
+                    if network == "WEM":
+                        pass
                     response_data = client.get_network_data(
-                        network_code=net_work,
+                        network_code=network,
                         metrics=metrics,
                         interval=interval,
                         date_start=current_start,
@@ -68,12 +70,11 @@ class ForecastingCoreClient:
                         primary_grouping=primary_grouping,
                         secondary_grouping=secondary_grouping,
                     )
-
                     total_data.append(response_data)
                     current_start = current_end
 
-            if not total_data:
-                return pd.DataFrame()
+        if not total_data:
+            return pd.DataFrame()
 
         return pd.concat(total_data, ignore_index=True)
 
